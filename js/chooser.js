@@ -10,6 +10,14 @@ selectTag.addEventListener('change', (event) => {
     audio_control.controls = false
     audio_control.muted = false
     audio_control.autoplay = true
+
+    if (selected != 3) {
+        // Present the link to the sword reveal
+        h = document.getElementById("theme")
+        h.style.display = "none"
+        x =  document.getElementById("enter")
+        x.style.display = "block"
+    } 
     console.log(`Selected option: ${event.target.value}`);
 });
 
