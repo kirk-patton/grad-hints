@@ -2,12 +2,18 @@ console.log("Hello World!")
 
 const t = new Map()
 t.set("highlander",{"image":"highlander.jpg"})
-t.set("mk",{"image":"mk_arena.jpg"})
+t.set("mk",{"image":"mk_arena.png"})
 t.set("conan",{"image":"conan-the-barbarian-1982-720x405-538807710.jpg"})
 t.set("blade",{"image":"blood-rain.jpg"})
 t.set("kurgan",{"image":"highlander-kurgan-skull.jpg"})
 
 const selectTag = document.querySelector('select');
+
+const scrollingElement = (document.scrollingElement || document.body);
+
+const scrollToBottom = () => {
+    scrollingElement.scrollTop = scrollingElement.scrollHeight;
+ }
 
 selectTag.addEventListener('change', (event) => {
     mute()
@@ -27,6 +33,7 @@ selectTag.addEventListener('change', (event) => {
 
         set_enter_image(image,audio_control)
         image.style.display = "block"
+        scrollToBottom()
     } 
     console.log(`Selected option: ${event.target.value}`);
 });
