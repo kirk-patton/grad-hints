@@ -5,6 +5,7 @@ t.set("highlander",{"image":"highlander.jpg"})
 t.set("mk",{"image":"mk_arena.jpg"})
 t.set("conan",{"image":"conan-the-barbarian-1982-720x405-538807710.jpg"})
 t.set("blade",{"image":"blood-rain.jpg"})
+t.set("kurgan",{"image":"highlander-kurgan-skull.jpg"})
 
 const selectTag = document.querySelector('select');
 
@@ -59,6 +60,13 @@ function set_enter_image(selected,audio_control) {
         case "audio_5":
             console.log("blade");
             theme = t.get("blade")
+            src[4] = theme.image
+            x = src.join("/")
+            selected.src = x 
+            break;
+        case "audio_6":
+            console.log("kurgan");
+            theme = t.get("kurgan")
             src[4] = theme.image
             x = src.join("/")
             selected.src = x 
